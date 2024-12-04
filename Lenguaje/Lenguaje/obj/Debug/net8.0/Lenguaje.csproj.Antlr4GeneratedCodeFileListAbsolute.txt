@@ -1,0 +1,6 @@
+C:\Users\dlcht\source\repos\Lenguaje\Lenguaje\obj\Debug\net8.0\SimpleLexer.cs
+C:\Users\dlcht\source\repos\Lenguaje\Lenguaje\obj\Debug\net8.0\SimpleParser.cs
+C:\Users\dlcht\source\repos\Lenguaje\Lenguaje\obj\Debug\net8.0\SimpleListener.cs
+C:\Users\dlcht\source\repos\Lenguaje\Lenguaje\obj\Debug\net8.0\SimpleBaseListener.cs
+C:\Users\dlcht\source\repos\Lenguaje\Lenguaje\obj\Debug\net8.0\SimpleVisitor.cs
+C:\Users\dlcht\source\repos\Lenguaje\Lenguaje\obj\Debug\net8.0\SimpleBaseVisitor.cs
