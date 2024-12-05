@@ -111,30 +111,6 @@ public interface SimpleListener extends ParseTreeListener {
 	 */
 	void exitAdditiveExpression(SimpleParser.AdditiveExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code exponentialExpression}
-	 * labeled alternative in {@link SimpleParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterExponentialExpression(SimpleParser.ExponentialExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code exponentialExpression}
-	 * labeled alternative in {@link SimpleParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitExponentialExpression(SimpleParser.ExponentialExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code squarerootExpression}
-	 * labeled alternative in {@link SimpleParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterSquarerootExpression(SimpleParser.SquarerootExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code squarerootExpression}
-	 * labeled alternative in {@link SimpleParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitSquarerootExpression(SimpleParser.SquarerootExpressionContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code identifierExpression}
 	 * labeled alternative in {@link SimpleParser#expression}.
 	 * @param ctx the parse tree
@@ -248,26 +224,6 @@ public interface SimpleListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCompareOp(SimpleParser.CompareOpContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link SimpleParser#expoOp}.
-	 * @param ctx the parse tree
-	 */
-	void enterExpoOp(SimpleParser.ExpoOpContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link SimpleParser#expoOp}.
-	 * @param ctx the parse tree
-	 */
-	void exitExpoOp(SimpleParser.ExpoOpContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link SimpleParser#sqrtOp}.
-	 * @param ctx the parse tree
-	 */
-	void enterSqrtOp(SimpleParser.SqrtOpContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link SimpleParser#sqrtOp}.
-	 * @param ctx the parse tree
-	 */
-	void exitSqrtOp(SimpleParser.SqrtOpContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link SimpleParser#boolOp}.
 	 * @param ctx the parse tree

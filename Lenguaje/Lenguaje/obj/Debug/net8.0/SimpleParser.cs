@@ -33,8 +33,9 @@ public partial class SimpleParser : Parser {
 	public const int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
-		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, WHILE=23, BOOL_OPERATOR=24, 
-		INTERGER=25, FLOAT=26, STRING=27, BOOL=28, NULL=29, WS=30, IDENTIFIER=31;
+		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, WHILE=24, 
+		BOOL_OPERATOR=25, INTERGER=26, FLOAT=27, STRING=28, BOOL=29, NULL=30, 
+		WS=31, IDENTIFIER=32;
 	public const int
 		RULE_program = 0, RULE_line = 1, RULE_statement = 2, RULE_ifBlock = 3, 
 		RULE_elseIfBlock = 4, RULE_whileBlock = 5, RULE_assignment = 6, RULE_functionCall = 7, 
@@ -48,16 +49,16 @@ public partial class SimpleParser : Parser {
 	};
 
 	private static readonly string[] _LiteralNames = {
-		null, "';'", "'si'", "'sino'", "'asigno'", "'('", "','", "')'", "'!'", 
-		"'estrella'", "'solecito'", "'sumita'", "'restita'", "'igualito'", "'diferente'", 
-		"'pequenito'", "'grandecito'", "'pequeigual'", "'granigual'", "'superstar'", 
-		"'supersol'", "'{'", "'}'", null, null, null, null, null, null, "'null'"
+		null, "';'", "'si'", "'sino'", "'else'", "'asigno'", "'('", "','", "')'", 
+		"'!'", "'*'", "'/'", "'+'", "'-'", "'=='", "'!='", "'<'", "'>'", "'>='", 
+		"'<='", "'estrella'", "'solecito'", "'{'", "'}'", null, null, null, null, 
+		null, null, "'null'"
 	};
 	private static readonly string[] _SymbolicNames = {
 		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, "WHILE", 
-		"BOOL_OPERATOR", "INTERGER", "FLOAT", "STRING", "BOOL", "NULL", "WS", 
-		"IDENTIFIER"
+		null, null, null, null, null, null, null, null, null, null, null, null, 
+		"WHILE", "BOOL_OPERATOR", "INTERGER", "FLOAT", "STRING", "BOOL", "NULL", 
+		"WS", "IDENTIFIER"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -398,7 +399,7 @@ public partial class SimpleParser : Parser {
 			State = 61;
 			_errHandler.Sync(this);
 			switch (_input.La(1)) {
-			case T__20:
+			case T__21:
 				EnterOuterAlt(_localctx, 1);
 				{
 				State = 59; block();
@@ -467,7 +468,7 @@ public partial class SimpleParser : Parser {
 			State = 64; expression(0);
 			State = 65; block();
 			{
-			State = 66; Match(T__2);
+			State = 66; Match(T__3);
 			State = 67; elseIfBlock();
 			}
 			}
@@ -516,7 +517,7 @@ public partial class SimpleParser : Parser {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 69; Match(IDENTIFIER);
-			State = 70; Match(T__3);
+			State = 70; Match(T__4);
 			State = 71; expression(0);
 			}
 		}
@@ -568,20 +569,20 @@ public partial class SimpleParser : Parser {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 73; Match(IDENTIFIER);
-			State = 74; Match(T__4);
+			State = 74; Match(T__5);
 			State = 83;
 			_errHandler.Sync(this);
 			_la = _input.La(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__4) | (1L << T__7) | (1L << INTERGER) | (1L << FLOAT) | (1L << STRING) | (1L << BOOL) | (1L << NULL) | (1L << IDENTIFIER))) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__5) | (1L << T__8) | (1L << INTERGER) | (1L << FLOAT) | (1L << STRING) | (1L << BOOL) | (1L << NULL) | (1L << IDENTIFIER))) != 0)) {
 				{
 				State = 75; expression(0);
 				State = 80;
 				_errHandler.Sync(this);
 				_la = _input.La(1);
-				while (_la==T__5) {
+				while (_la==T__6) {
 					{
 					{
-					State = 76; Match(T__5);
+					State = 76; Match(T__6);
 					State = 77; expression(0);
 					}
 					}
@@ -592,7 +593,7 @@ public partial class SimpleParser : Parser {
 				}
 			}
 
-			State = 85; Match(T__6);
+			State = 85; Match(T__7);
 			}
 		}
 		catch (RecognitionException re) {
@@ -914,9 +915,9 @@ public partial class SimpleParser : Parser {
 				_localctx = new ParentesisExpressionContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				State = 91; Match(T__4);
+				State = 91; Match(T__5);
 				State = 92; expression(0);
-				State = 93; Match(T__6);
+				State = 93; Match(T__7);
 				}
 				break;
 
@@ -925,7 +926,7 @@ public partial class SimpleParser : Parser {
 				_localctx = new NotExpressionContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				State = 95; Match(T__7);
+				State = 95; Match(T__8);
 				State = 96; expression(7);
 				}
 				break;
@@ -1058,7 +1059,7 @@ public partial class SimpleParser : Parser {
 			{
 			State = 128;
 			_la = _input.La(1);
-			if ( !(_la==T__8 || _la==T__9) ) {
+			if ( !(_la==T__9 || _la==T__10) ) {
 			_errHandler.RecoverInline(this);
 			} else {
 				if (_input.La(1) == TokenConstants.Eof) {
@@ -1112,7 +1113,7 @@ public partial class SimpleParser : Parser {
 			{
 			State = 130;
 			_la = _input.La(1);
-			if ( !(_la==T__10 || _la==T__11) ) {
+			if ( !(_la==T__11 || _la==T__12) ) {
 			_errHandler.RecoverInline(this);
 			} else {
 				if (_input.La(1) == TokenConstants.Eof) {
@@ -1166,7 +1167,7 @@ public partial class SimpleParser : Parser {
 			{
 			State = 132;
 			_la = _input.La(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__12) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__16) | (1L << T__17))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__16) | (1L << T__17) | (1L << T__18))) != 0)) ) {
 			_errHandler.RecoverInline(this);
 			} else {
 				if (_input.La(1) == TokenConstants.Eof) {
@@ -1217,7 +1218,7 @@ public partial class SimpleParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 134; Match(T__18);
+			State = 134; Match(T__19);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1259,7 +1260,7 @@ public partial class SimpleParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 136; Match(T__19);
+			State = 136; Match(T__20);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1410,7 +1411,7 @@ public partial class SimpleParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 142; Match(T__20);
+			State = 142; Match(T__21);
 			State = 146;
 			_errHandler.Sync(this);
 			_la = _input.La(1);
@@ -1424,7 +1425,7 @@ public partial class SimpleParser : Parser {
 				_errHandler.Sync(this);
 				_la = _input.La(1);
 			}
-			State = 149; Match(T__21);
+			State = 149; Match(T__22);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1462,7 +1463,7 @@ public partial class SimpleParser : Parser {
 	}
 
 	public static readonly string _serializedATN =
-		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3!\x9A\x4\x2\t\x2"+
+		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\"\x9A\x4\x2\t\x2"+
 		"\x4\x3\t\x3\x4\x4\t\x4\x4\x5\t\x5\x4\x6\t\x6\x4\a\t\a\x4\b\t\b\x4\t\t"+
 		"\t\x4\n\t\n\x4\v\t\v\x4\f\t\f\x4\r\t\r\x4\xE\t\xE\x4\xF\t\xF\x4\x10\t"+
 		"\x10\x4\x11\t\x11\x4\x12\t\x12\x3\x2\a\x2&\n\x2\f\x2\xE\x2)\v\x2\x3\x2"+
@@ -1476,8 +1477,8 @@ public partial class SimpleParser : Parser {
 		"\r\x3\r\x3\xE\x3\xE\x3\xF\x3\xF\x3\x10\x3\x10\x3\x11\x3\x11\x3\x12\x3"+
 		"\x12\a\x12\x93\n\x12\f\x12\xE\x12\x96\v\x12\x3\x12\x3\x12\x3\x12\x2\x2"+
 		"\x3\x12\x13\x2\x2\x4\x2\x6\x2\b\x2\n\x2\f\x2\xE\x2\x10\x2\x12\x2\x14\x2"+
-		"\x16\x2\x18\x2\x1A\x2\x1C\x2\x1E\x2 \x2\"\x2\x2\x6\x3\x2\v\f\x3\x2\r\xE"+
-		"\x3\x2\xF\x14\x3\x2\x1B\x1F\x9A\x2\'\x3\x2\x2\x2\x4/\x3\x2\x2\x2\x6\x33"+
+		"\x16\x2\x18\x2\x1A\x2\x1C\x2\x1E\x2 \x2\"\x2\x2\x6\x3\x2\f\r\x3\x2\xE"+
+		"\xF\x3\x2\x10\x15\x3\x2\x1C \x9A\x2\'\x3\x2\x2\x2\x4/\x3\x2\x2\x2\x6\x33"+
 		"\x3\x2\x2\x2\b\x37\x3\x2\x2\x2\n?\x3\x2\x2\x2\f\x41\x3\x2\x2\x2\xEG\x3"+
 		"\x2\x2\x2\x10K\x3\x2\x2\x2\x12\x63\x3\x2\x2\x2\x14\x82\x3\x2\x2\x2\x16"+
 		"\x84\x3\x2\x2\x2\x18\x86\x3\x2\x2\x2\x1A\x88\x3\x2\x2\x2\x1C\x8A\x3\x2"+
@@ -1489,17 +1490,17 @@ public partial class SimpleParser : Parser {
 		"\x3\x2\x2\x2\x33\x32\x3\x2\x2\x2\x34\x35\x3\x2\x2\x2\x35\x36\a\x3\x2\x2"+
 		"\x36\a\x3\x2\x2\x2\x37\x38\a\x4\x2\x2\x38\x39\x5\x12\n\x2\x39:\x5\"\x12"+
 		"\x2:;\a\x5\x2\x2;<\x5\n\x6\x2<\t\x3\x2\x2\x2=@\x5\"\x12\x2>@\x5\b\x5\x2"+
-		"?=\x3\x2\x2\x2?>\x3\x2\x2\x2@\v\x3\x2\x2\x2\x41\x42\a\x19\x2\x2\x42\x43"+
-		"\x5\x12\n\x2\x43\x44\x5\"\x12\x2\x44\x45\a\x5\x2\x2\x45\x46\x5\n\x6\x2"+
-		"\x46\r\x3\x2\x2\x2GH\a!\x2\x2HI\a\x6\x2\x2IJ\x5\x12\n\x2J\xF\x3\x2\x2"+
-		"\x2KL\a!\x2\x2LU\a\a\x2\x2MR\x5\x12\n\x2NO\a\b\x2\x2OQ\x5\x12\n\x2PN\x3"+
-		"\x2\x2\x2QT\x3\x2\x2\x2RP\x3\x2\x2\x2RS\x3\x2\x2\x2SV\x3\x2\x2\x2TR\x3"+
-		"\x2\x2\x2UM\x3\x2\x2\x2UV\x3\x2\x2\x2VW\x3\x2\x2\x2WX\a\t\x2\x2X\x11\x3"+
-		"\x2\x2\x2YZ\b\n\x1\x2Z\x64\x5 \x11\x2[\x64\a!\x2\x2\\\x64\x5\x10\t\x2"+
-		"]^\a\a\x2\x2^_\x5\x12\n\x2_`\a\t\x2\x2`\x64\x3\x2\x2\x2\x61\x62\a\n\x2"+
-		"\x2\x62\x64\x5\x12\n\t\x63Y\x3\x2\x2\x2\x63[\x3\x2\x2\x2\x63\\\x3\x2\x2"+
-		"\x2\x63]\x3\x2\x2\x2\x63\x61\x3\x2\x2\x2\x64\x7F\x3\x2\x2\x2\x65\x66\f"+
-		"\b\x2\x2\x66g\x5\x14\v\x2gh\x5\x12\n\th~\x3\x2\x2\x2ij\f\a\x2\x2jk\x5"+
+		"?=\x3\x2\x2\x2?>\x3\x2\x2\x2@\v\x3\x2\x2\x2\x41\x42\a\x1A\x2\x2\x42\x43"+
+		"\x5\x12\n\x2\x43\x44\x5\"\x12\x2\x44\x45\a\x6\x2\x2\x45\x46\x5\n\x6\x2"+
+		"\x46\r\x3\x2\x2\x2GH\a\"\x2\x2HI\a\a\x2\x2IJ\x5\x12\n\x2J\xF\x3\x2\x2"+
+		"\x2KL\a\"\x2\x2LU\a\b\x2\x2MR\x5\x12\n\x2NO\a\t\x2\x2OQ\x5\x12\n\x2PN"+
+		"\x3\x2\x2\x2QT\x3\x2\x2\x2RP\x3\x2\x2\x2RS\x3\x2\x2\x2SV\x3\x2\x2\x2T"+
+		"R\x3\x2\x2\x2UM\x3\x2\x2\x2UV\x3\x2\x2\x2VW\x3\x2\x2\x2WX\a\n\x2\x2X\x11"+
+		"\x3\x2\x2\x2YZ\b\n\x1\x2Z\x64\x5 \x11\x2[\x64\a\"\x2\x2\\\x64\x5\x10\t"+
+		"\x2]^\a\b\x2\x2^_\x5\x12\n\x2_`\a\n\x2\x2`\x64\x3\x2\x2\x2\x61\x62\a\v"+
+		"\x2\x2\x62\x64\x5\x12\n\t\x63Y\x3\x2\x2\x2\x63[\x3\x2\x2\x2\x63\\\x3\x2"+
+		"\x2\x2\x63]\x3\x2\x2\x2\x63\x61\x3\x2\x2\x2\x64\x7F\x3\x2\x2\x2\x65\x66"+
+		"\f\b\x2\x2\x66g\x5\x14\v\x2gh\x5\x12\n\th~\x3\x2\x2\x2ij\f\a\x2\x2jk\x5"+
 		"\x16\f\x2kl\x5\x12\n\bl~\x3\x2\x2\x2mn\f\x6\x2\x2no\x5\x1A\xE\x2op\x5"+
 		"\x12\n\ap~\x3\x2\x2\x2qr\f\x5\x2\x2rs\x5\x1C\xF\x2st\x5\x12\n\x6t~\x3"+
 		"\x2\x2\x2uv\f\x4\x2\x2vw\x5\x18\r\x2wx\x5\x12\n\x5x~\x3\x2\x2\x2yz\f\x3"+
@@ -1508,11 +1509,11 @@ public partial class SimpleParser : Parser {
 		"\x81\x3\x2\x2\x2\x7F}\x3\x2\x2\x2\x7F\x80\x3\x2\x2\x2\x80\x13\x3\x2\x2"+
 		"\x2\x81\x7F\x3\x2\x2\x2\x82\x83\t\x2\x2\x2\x83\x15\x3\x2\x2\x2\x84\x85"+
 		"\t\x3\x2\x2\x85\x17\x3\x2\x2\x2\x86\x87\t\x4\x2\x2\x87\x19\x3\x2\x2\x2"+
-		"\x88\x89\a\x15\x2\x2\x89\x1B\x3\x2\x2\x2\x8A\x8B\a\x16\x2\x2\x8B\x1D\x3"+
-		"\x2\x2\x2\x8C\x8D\a\x1A\x2\x2\x8D\x1F\x3\x2\x2\x2\x8E\x8F\t\x5\x2\x2\x8F"+
-		"!\x3\x2\x2\x2\x90\x94\a\x17\x2\x2\x91\x93\x5\x4\x3\x2\x92\x91\x3\x2\x2"+
+		"\x88\x89\a\x16\x2\x2\x89\x1B\x3\x2\x2\x2\x8A\x8B\a\x17\x2\x2\x8B\x1D\x3"+
+		"\x2\x2\x2\x8C\x8D\a\x1B\x2\x2\x8D\x1F\x3\x2\x2\x2\x8E\x8F\t\x5\x2\x2\x8F"+
+		"!\x3\x2\x2\x2\x90\x94\a\x18\x2\x2\x91\x93\x5\x4\x3\x2\x92\x91\x3\x2\x2"+
 		"\x2\x93\x96\x3\x2\x2\x2\x94\x92\x3\x2\x2\x2\x94\x95\x3\x2\x2\x2\x95\x97"+
-		"\x3\x2\x2\x2\x96\x94\x3\x2\x2\x2\x97\x98\a\x18\x2\x2\x98#\x3\x2\x2\x2"+
+		"\x3\x2\x2\x2\x96\x94\x3\x2\x2\x2\x97\x98\a\x19\x2\x2\x98#\x3\x2\x2\x2"+
 		"\f\'/\x33?RU\x63}\x7F\x94";
 	public static readonly ATN _ATN =
 		new ATNDeserializer().Deserialize(_serializedATN.ToCharArray());

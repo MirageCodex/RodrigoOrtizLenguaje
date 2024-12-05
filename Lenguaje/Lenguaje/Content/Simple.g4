@@ -10,7 +10,7 @@ ifBlock: 'si' expression block ('sino' elseIfBlock);
 
 elseIfBlock: block | ifBlock;
 
-whileBlock: WHILE expression block ('sino' elseIfBlock); 
+whileBlock: WHILE expression block ('else' elseIfBlock); 
 
 WHILE: 'bucle' | 'hasta';
 
@@ -32,25 +32,24 @@ expression
     | expression boolOp expression      #booleanExpression
 ; 
 
-multOp: 'estrella'|'solecito';
-addOp: 'sumita'|'restita';
-compareOp: 'igualito'|'diferente'|'pequenito'|'grandecito'|'pequeigual'|'granigual';
-expoOp : 'superstar';
-sqrtOp: 'supersol';
+multOp: '*'|'/';
+addOp: '+'|'-';
+compareOp: '=='|'!='|'<'|'>'|'>='|'<=';
+expoOp : 'estrella';
+sqrtOp: 'solecito';
 boolOp: BOOL_OPERATOR;
 
-BOOL_OPERATOR: 'y'|'o'|'xor';
+BOOL_OPERATOR: 'and'|'or'|'xor';
 
 constant: INTERGER | FLOAT | STRING | BOOL | NULL;
 
 INTERGER: [0-9]*;
 FLOAT: [0-9]+ '.'[0-9]*; 
 STRING: ('"' ~'"'* '"') | ('\'' ~'\''* '\'');
-BOOL: 'verdadero' | 'falso';
+BOOL: 'true' | 'false';
 NULL: 'null';
 
 block: '{' line* '}';
 
 WS: [ \t\r\n]+ -> skip;
 IDENTIFIER: [a-zA-Z_][a-zA-Z0-9_]*;
-
